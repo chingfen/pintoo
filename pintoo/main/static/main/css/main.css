@@ -1,0 +1,106 @@
+html{
+  background: #9C9C9C;
+}
+
+body {
+  padding: 0 30px 10px 30px;
+  margin: 2em auto;
+  height: 100%;
+  width: 55%;
+  display: table;
+  background: white;
+  border-radius: 25px;
+}
+
+/* logo */
+a#logo {
+  color: orangered;
+  text-decoration: none;
+  font-size: 3em;
+}
+
+div#menu {
+  margin: 2.5em 0 0 0;
+  padding: 0;
+  float: right;
+}
+
+div#menu a {
+  margin: 0 0.3em;
+  text-decoration: none;
+  color: #4B4B32;
+}
+
+div#add {
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* menu */
+ul#menu {
+  margin: 0 auto;
+  padding: 0; auto;
+  display: table;
+  width: 100%;
+}
+
+ul#menu li {
+  float: left;
+  list-style-type: none;
+}
+
+ul#menu li a {
+  font-size: 1em;
+  padding: 0.3em 20% 0.3em 20%;
+  display: block;
+  text-decoration: none;
+  color: orangered;
+  border-left: thin solid #FFE9D3;
+  border-right: thin solid #FFE9D3;
+  background: #FFCB82;
+  
+}
+
+ul#menu li a#first {
+  border-radius: 10px 0 0 10px;
+}
+
+ul#menu li a#last {
+  border-radius: 0 10px 10px 0;
+}
+
+/* Button */
+.btn {
+  margin: 0 1em 0 0;
+  display: inline-block;
+  color: #4E4E4E;
+  font-size: 0.9em;
+  padding: 0.2em 1.1em;
+  text-decoration: none;
+  border: thin solid #9C9C9C;
+  border-radius: 5px;
+  background: linear-gradient(#f7f7f7, #dedede);
+}
+
+/*.btn#login,#register {
+  float: right;
+  margin: 0 5px;
+}*/
+
+fieldset {
+  margin: 2em 3em;
+  border: thin solid #9C9C9C;
+  border-radius: 5px;
+  padding: 2em 10em;
+}
+
+/*form {
+  position: absolute;
+  margin: 2em 3em;
+  padding: 3em 5em;
+}*/
+
+div#commodity {
+  margin: 3em 0;
+  padding: 0;
+}

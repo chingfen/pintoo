@@ -1,0 +1,13 @@
+{% extends "main/base.html" %}
+{% block content %}
+{% if account %}
+<pre style="background:#fff;font-size:1.5em;">
+<img src={{ account.image }}>   
+暱稱：{{ account.name }}
+性別：{{ account.sex }}
+生日：{{ account.birthdate }}
+自我介紹：{{ account.introduction }}
+經驗：{{ account.lavel }}
+</pre>
+{% endif %}
+{% endblock %}

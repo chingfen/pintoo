@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+<a id="logo" href="{% url 'main:main' %}">Pintoo</a>
+{% include 'main/menu.html' %}
+{% block content %}
+<div id="form">
+  <h2>新增商品</h2>
+  <form method="post" action="{% url 'main:commodityCreate' %}" enctype="multipart/form-data" >
+  {% csrf_token %}
+  {{ commodityForm.as_p }}
+    <input class=" btn btn-default" type="submit" value="新增">
+    <a class="btn btn-red" href="{% url 'main:main' %}">放棄</a>
+    </form>
+</div><br><br>
+{% endblock %}

@@ -1,0 +1,24 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+<title>Pintoo</title>
+<meta charset=utf-8>
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body> 
+<a id="logo" href="{% url 'main:main' %}">Pintoo</a>
+{% include 'main/menu.html' %}
+{% block forms %}
+<form method="post" action="{% url 'account:register' %}">
+  {% csrf_token %}
+  <fieldset>
+   <legend>會員註冊</legend>
+  {{ userForm.as_p }}
+  <a class="btn btn-red" href="{% url 'main:main' %}">取消註冊</a>
+  <input class="btn" type="submit" value="送出">
+  </fieldset>
+</form>
+{% endblock %}
+</body>
+</html>

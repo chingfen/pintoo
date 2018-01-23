@@ -1,0 +1,29 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+<title>Pintoo</title>
+<meta charset=utf-8>
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body> 
+<a id="logo" href="{% url 'main:main' %}">Pintoo</a>
+{% include 'main/menu.html' %}
+{% block forms %}
+<form method="post" action="{% url 'account:login' %}">
+  {% csrf_token %}
+ <fieldset>
+  <legend>會員登入</legend>
+  <p>帳號：<input type="text" name="username"></p>
+  <p>密碼：<input type="password" name="password"></p>
+  <input class="btn" id="login" type="submit" value="登入">
+  <a class="btn" id="register" href="{% url 'account:register' %}">註冊</a>
+  {% if nextURL %}
+    <input type="hidden" name="nextURL" value="{{ nextURL }}">
+  {% endif %}
+</fieldset>
+<div class=clear></div>
+</form>
+{% endblock %}
+</body>
+</html>
