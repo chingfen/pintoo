@@ -24,7 +24,8 @@ SECRET_KEY = 'se*t38ayg+3#z2w90ck*^^oz6#!#ccruyk0tcshx_p1po68++6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+if 'DYNO' in os.environ:    # Running on Heroku
+    DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 
@@ -75,16 +76,24 @@ WSGI_APPLICATION = 'pintoo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pintooDB',
-        'USER': 'pintoo',
-        'PASSWORD': 'pintoo',
-        'HOST': 'localhost',
-        'PORT': '',     # Set to empty string for default.
+if DEBUG:   # Running on the development environment
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'pintooDB',
+            'USER': 'pintoo',
+            'PASSWORD': 'pintoo',
+            'HOST': 'localhost',
+            'PORT': '',     # Set to empty string for default.
+        }
     }
-}
+
+else:   # Running on Heroku
+    # Parse database configuration from $DATABASE_URL
+    import dj_database_url
+    DATABASES = {'default':dj_database_url.config()}
+    # Honor the 'X-Forwarded-Proto' header for request.is_secure()
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Password validation
@@ -129,3 +138,6 @@ STATIC_URL = '/static/'
 # For file uploads to the server
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# For Heroku deployment
+STATIC_ROOT = 'staticfiles'
