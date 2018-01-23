@@ -41,7 +41,6 @@ ul#menu {
   margin: 0 auto;
   padding: 0; auto;
   display: table;
-  width: 100%;
 }
 
 ul#menu li {
@@ -51,7 +50,7 @@ ul#menu li {
 
 ul#menu li a {
   font-size: 1em;
-  padding: 0.3em 20% 0.3em 20%;
+  padding: 0.3em 22% 0.3em 22%;
   display: block;
   text-decoration: none;
   color: orangered;
