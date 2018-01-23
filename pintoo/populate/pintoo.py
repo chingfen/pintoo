@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 
-pintoos = ['300片', '500片', '1000片']
+pintoos = ['8折','300片', '500片', '1000片','1600片']
 transports = ['黑貓宅即便', '超商到店付款']
 
 
